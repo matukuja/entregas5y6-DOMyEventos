@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- mi CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <title>Incorporando Eventos - Curso JavaScript</title>
+</head>
+
+<body>
+    <!-- Contenedor principal con las dos secciones más importantes: Resultados + Formularios de carga -->
+    <div id="contenedorPrincipal">
+        <!-- Inicio del contenedor en donde se muestran los resultados -->
+        <div id="contenedorResultados">
+            <!-- Acá se muestran dinámicamente los pedidos que el usuario ingrese al carrito -->
+            <h2>Visualizador de pedidos</h2>
+            <div id="vidrieraPedidos">
+
+            </div>
+            <!-- Acá aparecen los resultados de la compra cuando el usuario decida apretar en "finalizar compra" -->
+            <div id="datosCarrito">
+                <h3>Resumen del carrito:</h3>
+                <div id="resumenCarrito"></div>
+                <h3>Valores del carrito:</h3>
+                <div id="valoresCarrito"></div>
+                <h3 id="subTotalCarrito">Subtotal:</h3>
+                <h3 id="cuotasCarrito">Cantidad de cuotas elegidas:</h3>
+                <h3 id="recargoCuotasCarrito">Recargo por las cuotas elegidas:</h3>
+                <h3 id="valorTotalCarrito">Total a abonar:</h3>
+                <h3 id="valorPorCuota">Total a abonar por cuota:</h3>
+                <h6 id="mensajeFinal"></h6>
+            </div>
+        </div>
+
+        <!-- Inicio del contenedor en donde se muestran los formularios para que el usuario ingrese información -->
+        <div id="contenedorFormularios">
+            <div>
+                <h5>Form para agregar pedido al carrito:</h5>
+                <!-- formulario en donde el cliente carga los pedidos en el carrito -->
+                <form id="formPedidos">
+                    <div class="form-group">
+                        <label for="selectorEquipo">Elegí el equipo</label>
+                        <select class="form-control" id="selectorEquipo">
+                          <option>Boca Juniors</option>
+                          <option>River Plate</option>
+                          <option>San Lorenzo</option>
+                          <option>Independiente</option>
+                          <option>Racing</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="selectorTipoProducto">Elegí el tipo de producto</label>
+                        <select class="form-control" id="selectorTipoProducto">
+                          <option>Imanes</option>
+                          <option>Llaveros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputCantidad">Cantidad de unidades</label>
+                        <input type="text" class="form-control" id="inputCantidad" placeholder="ingresá las unidades a encargar">
+                    </div>
+                    <button type="submit" class="btn btn-success">Agregar</button>
+                    <button type="reset" class="btn btn-primary">Resetear form</button>
+                </form>
+            </div>
+            <div id="contenedorDatosAdicionales">
+                <h5>Datos clientes y cuotas:</h5>
+                <!-- formulario en donde el cliente especifica sus datos personales, de envio y las cuotas con las que quiere pagar -->
+                <form id="formDatosAdicionales">
+                    <div class="form-group">
+                        <label for="inputNombre">Ingresá tu nombre</label>
+                        <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputApellido">Ingresá tu apellido</label>
+                        <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDocumento">Ingresá tu documento</label>
+                        <input type="text" class="form-control" id="inputDocumento" placeholder="Documento">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputDireccion">Ingresá tu dirección</label>
+                        <input type="text" class="form-control" id="inputDireccion" placeholder="Dirección">
+                    </div>
+                    <div class="form-group">
+                        <label for="inputTelContacto">Ingresá tu teléfono de contacto</label>
+                        <input type="text" class="form-control" id="inputTelContacto" placeholder="tel de contacto">
+                    </div>
+                    <div class="form-group">
+                        <label for="selectorCuotas">Elegí las cuotas</label>
+                        <select class="form-control" id="selectorCuotas">
+                              <option>1</option>
+                              <option>3</option>
+                              <option>6</option>
+                              <option>12</option>
+                            </select>
+                    </div>
+                    <button type="submit" class="btn btn-success">Confirmar compra</button>
+                    <button type="reset" class="btn btn-primary">Resetear form</button>
+                    <button type="button" class="btn btn-warning" id="resetearEcommerce">Reiniciar ecommerce</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="entrega5y6-incorporando-eventos.js"></script>
+</body>
+
+</html>
